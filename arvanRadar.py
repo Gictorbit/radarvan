@@ -105,8 +105,9 @@ def main():
                 for col in range(responsive,len(matrix)):
                     print(matrix[col][row],end='')
                 print("")
-            # print("\n")
-
+            
+            for line in range(int(terminal_columns)):
+                print('‾',end="")
 
 def matrix_generator(arvan:ArvanCloud,column:int,resp:dict):
     matrix=[]
