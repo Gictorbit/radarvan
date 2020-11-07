@@ -1,0 +1,60 @@
+{
+    "Tehran":[
+        {
+            "name":"Asia Tech",
+            "api":"asiatec"
+        },
+        {
+            "name":"Irancell",
+            "api":"irancell"
+        },
+        {
+            "name":"Hamrahe Aval",
+            "api":"mci"
+        },
+        {
+            "name":"Afra Net",
+            "api":"afranet"
+        },
+        {
+            "name":"Mobin Net",
+            "api":"mobinnet"
+        },
+        {
+            "name":"Shatel",
+            "api":"shatel"
+        }
+    ],
+    "Isfahan":[
+        {
+            "name":"Hamrahe Aval",
+            "api":"mci-esfehan"
+        }
+    ],
+    "Mashhad":[
+        {
+            "name":"Hamrahe Aval",
+            "api":"mci-mashhad"
+        }
+    ],
+    "Tabriz":[
+        {
+            "name":"Hamrahe Aval",
+            "api":"mci-tabriz"
+        },
+        {
+            "name":"Asia Tech",
+            "api":"asiatec-tabriz"
+        }
+    ],
+    "Shiraz":[
+        {
+            "name":"Asia Tech",
+            "api":"asiatec-shiraz"
+        },
+        {
+            "name":"Hamrahe Aval",
+            "api":"mci-shiraz"
+        }
+    ]
+}
