@@ -1,3 +1,5 @@
+#! /usr/bin/env python3
+
 from typing import Dict, Tuple
 import requests
 import json
@@ -103,7 +105,7 @@ def main():
                 for col in range(responsive,len(matrix)):
                     print(matrix[col][row],end='')
                 print("")
-            print("\n")
+            # print("\n")
 
 
 def matrix_generator(arvan:ArvanCloud,column:int,resp:dict):
