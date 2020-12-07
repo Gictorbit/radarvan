@@ -73,8 +73,6 @@ class ArvanCloud:
         return True
 
 def main():
-
-    
     arvan = ArvanCloud()
     
     for city in arvan.getIspData():
@@ -87,8 +85,11 @@ def main():
             # print(apiURL)
             
             res = requests.get(apiURL)
+            
+            if res.status_code == 404:
+                continue
+            
             res = dict(json.loads(res.content))
-
             
             if not arvan.avaibleISP(res):
                 continue
@@ -97,7 +98,6 @@ def main():
             matrix_col_len = 360
             
             matrix = matrix_generator(arvan=arvan,column=matrix_col_len,resp=res)
-
             responsive = len(matrix)-int(terminal_columns)
             
             # print(matrix)
