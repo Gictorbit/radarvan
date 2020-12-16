@@ -72,9 +72,22 @@ class ArvanCloud:
                 return False
         return True
 
+    def printApps(self):
+        app_dict = self.getIspApps()
+        for app in app_dict:
+            print(app_dict[app]+"⬤",app,fg.End,end=' ')
+        
+        global terminal_columns
+        print()
+        for i in range(int(terminal_columns)):
+            print("⎯",end='')
+        print()
+
+
 def main():
     arvan = ArvanCloud()
-    
+    arvan.printApps()
+
     for city in arvan.getIspData():
         # print(city,"***************")
         for isp  in arvan.getIspData()[city]:
