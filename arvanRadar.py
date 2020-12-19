@@ -5,6 +5,7 @@ import requests
 import json
 import os
 from sty import Style, RgbFg ,fg
+import datetime
 
 class ArvanCloud:
     def __init__(self):
@@ -72,21 +73,46 @@ class ArvanCloud:
                 return False
         return True
 
+    def __printLineChar(self,oneChar):
+        global terminal_columns
+        for i in range(int(terminal_columns)):
+            print(oneChar,end='')
+        print()
+
     def printApps(self):
         app_dict = self.getIspApps()
         for app in app_dict:
             print(app_dict[app]+"⬤",app,fg.End,end=' ')
+        print()
+        self.__printLineChar("_")
+
+    def printTimeBar(self):
+        timeSpace=0
+        timesList = []
+        now = datetime.datetime.now()
+        for t in range(25):
+            timeEl = now - datetime.timedelta(minutes=timeSpace)
+
+            hour =str.zfill(str(timeEl.hour),2)
+            minute = str.zfill(str(timeEl.minute),2)  
+            
+            timesList.append(f"{hour}:{minute}")
+            timeSpace+=15
         
-        global terminal_columns
-        print()
-        for i in range(int(terminal_columns)):
-            print("⎯",end='')
-        print()
+        
+        timeLine=""
+        for time in timesList:
+            timeLine=f"        {time} |"+timeLine
+        
+        timeRange = len(timeLine)-int(terminal_columns)
+        print(timeLine[timeRange:])
+        self.__printLineChar("‾")
 
 
 def main():
     arvan = ArvanCloud()
     arvan.printApps()
+    arvan.printTimeBar()
 
     for city in arvan.getIspData():
         # print(city,"***************")
