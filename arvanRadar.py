@@ -30,6 +30,7 @@ class ArvanCloud:
         fg.Digikala = Style(RgbFg(94,207,39))
         fg.Aparat = Style(RgbFg(118,253,238))
         fg.Varzesh3 = Style(RgbFg(62,133,255))
+        fg.Clubhouse = Style(RgbFg(246,204,3))
         fg.End = '\033[0m'
 
         appList = {
@@ -40,7 +41,8 @@ class ArvanCloud:
             'wikipedia':fg.Wikipedia,
             'digikala':fg.Digikala,
             'aparat':fg.Aparat,
-            'varzesh3':fg.Varzesh3,  
+            'varzesh3':fg.Varzesh3,
+            'clubhouseapi':fg.Clubhouse
         }
         
         return appList
