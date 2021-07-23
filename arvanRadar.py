@@ -3,9 +3,12 @@
 from typing import Dict, Tuple
 import requests
 import json
-import os
+import os,sys
 from sty import Style, RgbFg ,fg
 import datetime
+
+if sys.platform == "win32":
+    os.system('color')
 
 class ArvanCloud:
     def __init__(self):
@@ -188,5 +191,5 @@ def printMatrix(matrix):
 
 
 if __name__ == "__main__":
-    terminal_rows, terminal_columns = os.popen('stty size', 'r').read().split()
+    terminal_rows, terminal_columns = os.get_terminal_size().lines,os.get_terminal_size().columns if sys.platform == "win32"  else os.popen('stty size', 'r').read().split()
     main() 
