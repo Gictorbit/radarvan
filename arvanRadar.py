@@ -7,8 +7,6 @@ import os,sys
 from sty import Style, RgbFg ,fg
 import datetime
 
-if sys.platform == "win32":
-    os.system('color')
 
 class ArvanCloud:
     def __init__(self):
@@ -72,7 +70,7 @@ class ArvanCloud:
                 return True
         return False
     
-    def avaibleISP(self,ispData=dict)->bool:
+    def avaibleISP(self,ispData:dict)->bool:
         for app in ispData:
             if ispData[app]==None:
                 return False
@@ -191,5 +189,10 @@ def printMatrix(matrix):
 
 
 if __name__ == "__main__":
-    terminal_rows, terminal_columns = os.get_terminal_size().lines,os.get_terminal_size().columns if sys.platform == "win32"  else os.popen('stty size', 'r').read().split()
+    if sys.platform == "win32":
+        os.system('color')
+        terminal_rows, terminal_columns = os.get_terminal_size().lines,os.get_terminal_size().columns
+    else:
+        terminal_rows, terminal_columns = os.popen('stty size', 'r').read().split()
+    
     main() 
