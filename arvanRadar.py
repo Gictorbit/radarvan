@@ -11,7 +11,7 @@ import datetime
 class ArvanCloud:
     def __init__(self):
         self.__ispData = self.__getIspData()
-        self.__origin = "https://radar.arvancloud.com"
+        self.__origin = "https://radar.arvancloud.ir"
         self.__apiPath = "/api/v1/internet-monitoring?isp="
         self.__radarApps = self.__getApps()
 
